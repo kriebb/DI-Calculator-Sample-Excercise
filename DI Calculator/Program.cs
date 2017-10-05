@@ -11,8 +11,10 @@ namespace DI_Calculator
         
         static void Main(string[] args)
         {
-            //Maak een programma dat 4*3 output op de console.
-            Console.WriteLine(4*3);
+            //Werk nu met parameters
+            int x = 4;
+            int y = 3;
+            Console.WriteLine(x*y);
             Console.ReadKey();
         }
     }
