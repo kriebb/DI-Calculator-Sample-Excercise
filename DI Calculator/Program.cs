@@ -11,11 +11,17 @@ namespace DI_Calculator
         
         static void Main(string[] args)
         {
-            //Werk nu met parameters
-            int x = 4;
-            int y = 3;
-            Console.WriteLine(x*y);
+            //Werk nu met een methode, zodanig dat je geen logging moet schrijven dat je x met y *
+            var x = 4;
+            var y = 3;
+            var multiplied = Multiply(x, y);
+            Console.WriteLine(multiplied);
             Console.ReadKey();
+        }
+
+        static int Multiply(int x, int y)
+        {
+            return x * y;
         }
     }
 }
