@@ -7,30 +7,30 @@ using System.Threading.Tasks;
 
 namespace DI_Calculator
 {
-    class Program
+    internal class ResultDisplayer
+    {
+        public void Display(string origin, int result)
+        {
+            Console.WriteLine(string.Format($"{origin}: result:{result}"));
+            Console.ReadKey();
+        }
+    }
+    internal class Startup
     {
 
-        static void Main(string[] args)
+        public void Start(string operation, int x, int y)
         {
-            //Refactor: Zorg dat enkel de input (values, operator) en startup in de main staan.
-            //Refactor: je hebt een 'DoWork' die de parameters bevat
-            //Refactor: Zorg ervoor dat de switch gecontained is. Een Switch = Smell naar factory.
+            var result = new SimpleCalculator().Calculate(operation, x, y);
 
-            var operation = "+";
-
-            var x = 4;
-            var y = 3;
-
-
-            DoWork(operation, x, y);
+            new ResultDisplayer().Display(operation, result);
         }
+    }
 
-        private static void DoWork(string operation, int x, int y)
+    internal class SimpleCalculator
+    {
+        public int Calculate(string operation, int x, int y)
         {
-            var result = OperationFactory(operation, x, y);
-
-            Console.WriteLine(result);
-            Console.ReadKey();
+            return OperationFactory(operation, x, y);
         }
 
         private static int OperationFactory(string operation, int x, int y)
@@ -50,14 +50,46 @@ namespace DI_Calculator
             return result;
         }
 
-        static int Multiply(int x, int y)
+        private static int Multiply(int x, int y)
         {
             return x * y;
         }
 
-        static int Add(int x, int y)
+        private static int Add(int x, int y)
         {
             return x + y;
         }
+    }
+
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+            //Refactor: next step: Weg van statics!
+            //Code is for production.
+            //Ik wil twee instanties om te rekenen. Eén voor 4+3 en één voor 4*3
+            //De beide instanties moeten kunnen displayen naar de console op dezelfde manier.
+            //Zorg dat je weet welk resultaat komt van welke calculator
+
+
+            var operation1 = "+";
+
+            var x1 = 4;
+            var y1 = 3;
+
+            var operation2 = "*";
+            var x2 = 4;
+            var y2 = 3;
+
+            new Startup().Start(operation1, x1, y1);
+            new Startup().Start(operation2, x2, y2);
+
+        }
+
+
+
+
+
     }
 }
