@@ -12,14 +12,30 @@ namespace DI_Calculator
 
         static void Main(string[] args)
         {
-            //Zorg ervoor dat je applicatie werkt met 'Add', naast ook Multiply te kennen, op basis van een parameter. Multiply = * en Add = +
-            //Zorg ervoor dat je 4+3 uitkomt
-            //Indien een niet gekende operatie gebruikt wordt, gaat de applicatie een exception smijten.
+            //Refactor: Zorg dat enkel de input (values, operator) en startup in de main staan.
+            //Refactor: je hebt een 'DoWork' die de parameters bevat
+            //Refactor: Zorg ervoor dat de switch gecontained is. Een Switch = Smell naar factory.
+
             var operation = "+";
 
             var x = 4;
             var y = 3;
-            int result = 0;
+
+
+            DoWork(operation, x, y);
+        }
+
+        private static void DoWork(string operation, int x, int y)
+        {
+            var result = OperationFactory(operation, x, y);
+
+            Console.WriteLine(result);
+            Console.ReadKey();
+        }
+
+        private static int OperationFactory(string operation, int x, int y)
+        {
+            int result
             switch (operation)
             {
                 case "*":
@@ -31,9 +47,7 @@ namespace DI_Calculator
                 default:
                     throw new ArgumentException($"We ondersteunen niet de operatie: {operation} enkel maar de operatie * of +");
             }
-
-            Console.WriteLine(result);
-            Console.ReadKey();
+            return result;
         }
 
         static int Multiply(int x, int y)
