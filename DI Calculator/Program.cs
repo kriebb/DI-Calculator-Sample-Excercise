@@ -35,7 +35,7 @@ namespace DI_Calculator
 
         private static int OperationFactory(string operation, int x, int y)
         {
-            int result
+            int result;
             switch (operation)
             {
                 case "*":
