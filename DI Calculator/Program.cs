@@ -11,6 +11,7 @@ using DI_Calculator.CalculationManagement.Impl.OpenForExtension.Operations;
 using DI_Calculator.CalculationManagement.Impl.Simple;
 using DI_Calculator.DisplayManagement;
 using DI_Calculator.DisplayManagement.Impl;
+using DI_Calculator.Shared;
 using Microsoft.Practices.Unity;
 using ObscureWare.Console;
 
@@ -42,15 +43,21 @@ namespace DI_Calculator
                     throw new ArgumentOutOfRangeException($"{nameof(CalculationVersion)} only supports V0 or V1 or V2. It was {CalculationVersion}");
             }
             unityContainer.RegisterType<IOperationFactory, OperationFactory>(new ContainerControlledLifetimeManager());
+            unityContainer.RegisterType<IOperation, MultiplyOperation>(Defines.Multiplication);
+            unityContainer.RegisterType<IOperation, SubstractionOperation>(Defines.Substraction);
+            unityContainer.RegisterType<IOperation, DivisionOperation>(Defines.Division);
+            unityContainer.RegisterType<IOperation, SommationOperation>(Defines.Sum);
+
             unityContainer.RegisterType<IOutputBuilderResult, ResultFactory>(new ContainerControlledLifetimeManager());
         }
 
         static void Main(string[] args)
         {
-            //We maken een V2 van de OpenForExtensionCalculator.
-            //In plaats van  te werken met de OperationFactory, gaan we nu alle Operations injecteren en gaan zoeken op basis van de naam.
-            //Zouden we niet evengoed een OperationFactoryV2 kunnen gemaakt hebben in plaats van een nieuwe calculator? 
-            //Open for discussion
+            //Vorige oefening werkt niet. De IOperations zijn niet geregistreerd!
+            //Fix: de naam van één de operations. 
+            //Hoe konden we dit tegengaan ? => Testing
+            //Verander het gebruik van de OperationFactory, ook door de Defines te gebruiken (properdere code...))
+
 
             CalculationVersion = "V2";
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using DI_Calculator.Shared;
 
 namespace DI_Calculator.CalculationManagement.Impl.OpenForExtension.Operations
 {
@@ -8,13 +9,13 @@ namespace DI_Calculator.CalculationManagement.Impl.OpenForExtension.Operations
         {
             switch (operation)
             {
-                case "*":
+                case Defines.Multiplication:
                     return new MultiplyOperation();
-                case "+":
+                case Defines.Sum:
                     return new SommationOperation();
-                case "-":
+                case Defines.Substraction:
                     return new SubstractionOperation();
-                case "/":
+                case Defines.Division:
                     return new DivisionOperation();
 
                 default:

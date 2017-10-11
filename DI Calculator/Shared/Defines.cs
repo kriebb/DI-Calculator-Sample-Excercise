@@ -8,9 +8,9 @@ namespace DI_Calculator.Shared
 {
     public static class Defines
     {
-        public static string Sum = "+";
-        public static string Division = "/";
-        public static string Substraction = "-";
-        public static string Multiplication = "*";
+        public const string Sum = "+";
+        public const string Division = "/";
+        public const string Substraction = "-";
+        public const string Multiplication = "*";
     }
 }

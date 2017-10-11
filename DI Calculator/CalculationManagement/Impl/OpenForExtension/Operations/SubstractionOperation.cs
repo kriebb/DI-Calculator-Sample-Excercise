@@ -9,6 +9,6 @@ namespace DI_Calculator.CalculationManagement.Impl.OpenForExtension.Operations
             return x - y;
         }
 
-        public string Name => Defines.Division;
+        public string Name => Defines.Substraction;
     }
 }
