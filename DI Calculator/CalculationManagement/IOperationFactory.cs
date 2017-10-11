@@ -1,4 +1,4 @@
-﻿namespace DI_Calculator.CalculationManagement.Impl
+﻿namespace DI_Calculator.CalculationManagement
 {
     public interface IOperationFactory
     {

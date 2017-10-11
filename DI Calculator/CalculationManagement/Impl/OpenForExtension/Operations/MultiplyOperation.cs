@@ -1,4 +1,6 @@
-﻿namespace DI_Calculator.CalculationManagement.Impl
+﻿using DI_Calculator.Shared;
+
+namespace DI_Calculator.CalculationManagement.Impl.OpenForExtension.Operations
 {
     internal class MultiplyOperation : IOperation
     {
@@ -6,5 +8,8 @@
         {
             return x * y;
         }
+
+        public string Name => Defines.Multiplication;
+
     }
 }

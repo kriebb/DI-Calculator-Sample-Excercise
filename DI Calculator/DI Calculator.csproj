@@ -134,16 +134,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalculationManagement\Impl\OpenForExtension\OpenForExtensionCalculatorV1.cs" />
     <Compile Include="CalculationManagement\Impl\OpenForExtension\Operations\DivisionOperation.cs" />
     <Compile Include="CalculationManagement\Impl\OpenForExtension\Operations\SubstractionOperation.cs" />
     <Compile Include="CalculationManagement\IOperation.cs" />
     <Compile Include="CalculationManagement\IOperationFactory.cs" />
     <Compile Include="CalculationManagement\Impl\OpenForExtension\Operations\MultiplyOperation.cs" />
-    <Compile Include="CalculationManagement\Impl\OpenForExtension\OpenForExtensionCalculator.cs" />
+    <Compile Include="CalculationManagement\Impl\OpenForExtension\OpenForExtensionCalculatorV2.cs" />
     <Compile Include="CalculationManagement\Impl\OpenForExtension\Operations\OperationFactory.cs" />
     <Compile Include="CalculationManagement\Impl\OpenForExtension\Operations\SommationOperation.cs" />
     <Compile Include="DisplayManagement\IOutputBuilderResult.cs" />
     <Compile Include="DisplayManagement\Impl\ResultFactory.cs" />
+    <Compile Include="Shared\Defines.cs" />
     <Compile Include="Tests\CalculationManagement\GivenACalculator.cs" />
     <Compile Include="Tests\Bootstrap\GivenTheStartUpClass.cs" />
     <Compile Include="CalculationManagement\ICalculator.cs" />

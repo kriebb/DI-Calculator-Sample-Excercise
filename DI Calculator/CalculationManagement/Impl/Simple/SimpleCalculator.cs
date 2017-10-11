@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DI_Calculator.CalculationManagement.Impl
+namespace DI_Calculator.CalculationManagement.Impl.Simple
 {
     internal class SimpleCalculator:ICalculator
     {

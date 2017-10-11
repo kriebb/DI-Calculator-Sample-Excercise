@@ -1,4 +1,4 @@
-﻿using DI_Calculator.CalculationManagement.Impl;
+﻿using DI_Calculator.CalculationManagement.Impl.Simple;
 using NUnit.Framework;
 
 namespace DI_Calculator.Tests.CalculationManagement

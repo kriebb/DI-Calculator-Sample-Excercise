@@ -1,12 +1,10 @@
-﻿using System;
-
-namespace DI_Calculator.CalculationManagement.Impl
+﻿namespace DI_Calculator.CalculationManagement.Impl.OpenForExtension
 {
-    internal class OpenForExtensionCalculator : ICalculator
+    internal class OpenForExtensionCalculatorV1 : ICalculator
     {
         private readonly IOperationFactory _operationFactory;
 
-        public OpenForExtensionCalculator(IOperationFactory operationFactory)
+        public OpenForExtensionCalculatorV1(IOperationFactory operationFactory)
         {
             _operationFactory = operationFactory;
         }

@@ -1,5 +1,4 @@
-﻿using DI_Calculator.CalculationManagement.Impl;
-using DI_Calculator.DisplayManagement.Impl;
+﻿using DI_Calculator.DisplayManagement.Impl;
 using NSubstitute;
 using NUnit.Framework;
 using ObscureWare.Console;

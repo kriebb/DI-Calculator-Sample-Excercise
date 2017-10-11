@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DI_Calculator.CalculationManagement.Impl
+namespace DI_Calculator.CalculationManagement.Impl.OpenForExtension.Operations
 {
     internal class OperationFactory : IOperationFactory
     {
