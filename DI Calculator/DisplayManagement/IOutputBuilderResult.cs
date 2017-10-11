@@ -1,4 +1,4 @@
-﻿namespace DI_Calculator.DisplayManagement.Impl
+﻿namespace DI_Calculator.DisplayManagement
 {
     public interface IOutputBuilderResult
     {

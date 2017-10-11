@@ -1,9 +1,10 @@
-﻿using DI_Calculator.DisplayManagement.Impl;
+﻿using DI_Calculator.DisplayManagement;
+using DI_Calculator.DisplayManagement.Impl;
 using NSubstitute;
 using NUnit.Framework;
 using ObscureWare.Console;
 
-namespace DI_Calculator.Tests.CalculationManagement
+namespace DI_Calculator.Tests.DisplayManagement
 {
     [TestFixture]
     public class GivenAResultFactory
