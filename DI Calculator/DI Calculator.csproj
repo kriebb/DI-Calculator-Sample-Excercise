@@ -138,6 +138,8 @@
     <Compile Include="CalculationManagement\ContainerRegistratonsV1.cs" />
     <Compile Include="CalculationManagement\ContainerRegistratonsV2.cs" />
     <Compile Include="CalculationManagement\ContainerRegistratonsV3.cs" />
+    <Compile Include="CalculationManagement\Impl\OpenForExtension\IKeyInputMapper.cs" />
+    <Compile Include="CalculationManagement\Impl\OpenForExtension\KeyInputMapper.cs" />
     <Compile Include="CalculationManagement\Impl\OpenForExtension\OpenForExtensionCalculatorV1.cs" />
     <Compile Include="CalculationManagement\Impl\OpenForExtension\OpenForExtensionCalculatorV3.cs" />
     <Compile Include="CalculationManagement\Impl\OpenForExtension\Operations\DivisionOperation.cs" />

@@ -7,7 +7,6 @@ namespace DI_Calculator.CalculationManagement
 {
     public class ContainerRegistratonsV3
     {
-
         public void Register(IUnityContainer unityContainer)
         {
             unityContainer.RegisterType<ICalculator, OpenForExtensionCalculatorV3>(
@@ -17,6 +16,8 @@ namespace DI_Calculator.CalculationManagement
             unityContainer.RegisterType<IOperation, SubstractionOperation>(Defines.Substraction);
             unityContainer.RegisterType<IOperation, DivisionOperation>(Defines.Division);
             unityContainer.RegisterType<IOperation, SommationOperation>(Defines.Sum);
+
+            unityContainer.RegisterType<IKeyInputMapper, KeyInputMapper>(new ContainerControlledLifetimeManager());
         }
     }
 }

@@ -46,13 +46,17 @@ namespace DI_Calculator
 
         static void Main(string[] args)
         {
+            //Maak gebruik van een KeyInputMapper, 
+            //zodat je niet meer gebonden bent 
+            //aan de * maar zodat je ook een x kan gebruiken of een . voor de multiply
+
             CalculationVersion = "V3";
 
             var operandSum = "+";
             var xSum = 4;
             var ySum = 3;
 
-            var operandMultiply = "*";
+            var operandMultiply = ".";
             var xMultiply = 4;
             var yMultiply = 3;
 
