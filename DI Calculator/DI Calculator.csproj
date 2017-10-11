@@ -156,6 +156,7 @@
     <Compile Include="Framework\ContainerManagement\INamedResolver.cs" />
     <Compile Include="Framework\ContainerManagement\Impl\NamedResolver.cs" />
     <Compile Include="Framework\ContainerManagement\UnityRegistrations.cs" />
+    <Compile Include="Framework\SettingsManagement\Settings.cs" />
     <Compile Include="Shared\Defines.cs" />
     <Compile Include="Tests\CalculationManagement\GivenACalculator.cs" />
     <Compile Include="Tests\Bootstrap\GivenTheStartUpClass.cs" />
@@ -167,12 +168,15 @@
     <Compile Include="CalculationManagement\Impl\Simple\SimpleCalculator.cs" />
     <Compile Include="Bootstrap\Startup.cs" />
     <Compile Include="Tests\DisplayManagement\GivenAResultDisplayer.cs" />
+    <Compile Include="Tests\DisplayManagement\GivenAResultFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Console.Commands.License.txt" />
     <Content Include="Obscureware.Console.Operations.License.txt" />

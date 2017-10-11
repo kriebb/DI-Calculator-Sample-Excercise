@@ -1,15 +1,16 @@
 ﻿using System;
-
+using System.Threading;
 using DI_Calculator.Bootstrap;
 using DI_Calculator.CalculationManagement;
 using DI_Calculator.DisplayManagement;
+using DI_Calculator.Framework.SettingsManagement;
 using DI_Calculator.Shared;
 using Microsoft.Practices.Unity;
 
 
 namespace DI_Calculator
 {
-    class Program
+        class Program
     {
         public static string CalculationVersion { get; set; }
 
@@ -19,6 +20,10 @@ namespace DI_Calculator
             new DI_Calculator.CalculationManagement.ContainerRegistratons().Register(container);
             new DI_Calculator.DisplayManagement.ContainerRegistratons().Register(container);
             new DI_Calculator.Framework.ContainerManagement.ContainerRegistrations().Register(container);            
+            
+            var settings = new Settings("KRB");
+            container.RegisterInstance<ISettings>(settings);
+
         }
 
         static void RegisterVersionFactory(IUnityContainer container)
@@ -44,11 +49,13 @@ namespace DI_Calculator
             }
         }
 
+
+
         static void Main(string[] args)
         {
-            //Maak gebruik van een KeyInputMapper, 
-            //zodat je niet meer gebonden bent 
-            //aan de * maar zodat je ook een x kan gebruiken of een . voor de multiply
+            //Zorg dat je de CurrentUser capteert bij de start van de applicatie en registreer de instantie.
+            //Maak dat je de usernaam kan displayen bij de displayer.
+            //Fix all the tests
 
             CalculationVersion = "V3";
 

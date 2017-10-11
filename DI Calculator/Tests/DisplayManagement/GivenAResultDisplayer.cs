@@ -1,31 +1,12 @@
 ﻿using DI_Calculator.DisplayManagement;
 using DI_Calculator.DisplayManagement.Impl;
+using DI_Calculator.Framework.SettingsManagement;
 using NSubstitute;
 using NUnit.Framework;
 using ObscureWare.Console;
 
 namespace DI_Calculator.Tests.DisplayManagement
 {
-    [TestFixture]
-    public class GivenAResultFactory
-    {
-        [Test]
-        [TestCase("+", 0, "+: 0")]
-        [TestCase("*", 7, "*: 7")]
-        [TestCase("*", 12, "*: 12")]
-        public void WhenWeDisplayTheResult_TheOutputShouldBeFormattedWithAnOrigin(string operation, int calculatedResult, string expectedFormat)
-        {
-
-            //Act
-            var resultDisplayer = new ResultFactory();
-            var result = resultDisplayer.Generate(operation, calculatedResult);
-            //Assert
-
-            Assert.AreEqual(expectedFormat, result);
-        }
-
-    }
-
     public class GivenAResultDisplayer
     {
         [Test]
@@ -37,10 +18,12 @@ namespace DI_Calculator.Tests.DisplayManagement
             //Arrange
             var console = Substitute.For<IConsole>();
             var builder = Substitute.For<IOutputBuilderResult>();
-
-            builder.Generate(operation, calculatedResult).Returns(expectedFormat);
+            var settings = Substitute.For<ISettings>();
+            var userName = "George";
+            settings.UserName.Returns(userName);
+            builder.Generate(userName,operation, calculatedResult).Returns(expectedFormat);
             //Act
-            var resultDisplayer = new ResultDisplayer(console, builder);
+            var resultDisplayer = new ResultDisplayer(console, builder, settings);
             resultDisplayer.Display(operation, calculatedResult);
             //Assert
 

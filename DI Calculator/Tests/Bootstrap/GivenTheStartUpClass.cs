@@ -54,8 +54,6 @@ namespace DI_Calculator.Tests.Bootstrap
         public void WhenWeStartTheApplication_TheResultShouldBeDisplayed()
         {
             //Arrange
-            _displayer.Display(_operation, _fakeCalculatedResult);
-
             //Act
             var startup = new Startup(_calculator, _displayer);
 
