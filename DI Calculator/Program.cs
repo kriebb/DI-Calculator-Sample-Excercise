@@ -21,20 +21,12 @@ namespace DI_Calculator
             unityContainer.RegisterType<IConsole, SystemConsole>(new ContainerControlledLifetimeManager(), new InjectionConstructor(new ConsoleController()));
             unityContainer.RegisterType<IDisplayer, ResultDisplayer>(new ContainerControlledLifetimeManager());
             unityContainer.RegisterType<ICalculator, SimpleCalculator>(new ContainerControlledLifetimeManager());
+            unityContainer.RegisterType<IOutputBuilderResult, ResultFactory>(new ContainerControlledLifetimeManager());
         }
         static void Main(string[] args)
         {
-            //Verwijderen van oude referentie Unity (foutje bij setup by me).
-            //Toevoegen van unity op project DI Calculator
-            //Splits het gebruik van de container op in twee delen:
-            //-Registraties
-            //-Resolving
-            //Gebruik die twee zaken nooit door elkaar.
-            //Werk altijld met een child container
-            //In een childcontainer kan je ook je registraties overschrijven.
-            //Vervang de manuele injectie door een resolve op de container.
-            //Registreer nog niet de interface IOutputBuilderResult met de gekozen implementatie
-            //Run
+            //Fix zodat de applicatie runt via de registraties
+
 
             var operation1 = "+";
 
