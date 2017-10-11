@@ -20,16 +20,19 @@ namespace DI_Calculator
         {
             unityContainer.RegisterType<IConsole, SystemConsole>(new ContainerControlledLifetimeManager(), new InjectionConstructor(new ConsoleController()));
             unityContainer.RegisterType<IDisplayer, ResultDisplayer>(new ContainerControlledLifetimeManager());
-            unityContainer.RegisterType<ICalculator, SimpleCalculator>(new ContainerControlledLifetimeManager());
+            //unityContainer.RegisterType<ICalculator, SimpleCalculator>(new ContainerControlledLifetimeManager());
+            unityContainer.RegisterType<ICalculator, OpenForExtensionCalculator>(new ContainerControlledLifetimeManager());
+            unityContainer.RegisterType<IOperationFactory, OperationFactory>(new ContainerControlledLifetimeManager());
             unityContainer.RegisterType<IOutputBuilderResult, ResultFactory>(new ContainerControlledLifetimeManager());
         }
         static void Main(string[] args)
         {
-            //Fix zodat de applicatie runt via de registraties
-
+            //We gaan de Open/Closed principe toepassen van SOLID in de OpenForExtensionCalculator
+            //De switch gaat naar een Factory (where it belongs!!)
+            //We gaan werken via een OpenForExtensionCalculator die de interface ICalculator implementeert.
+            //De oude registratie doen we eruit, en we registreren de nieuwe calculator.
 
             var operation1 = "+";
-
             var x1 = 4;
             var y1 = 3;
 

@@ -134,6 +134,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalculationManagement\IOperation.cs" />
+    <Compile Include="CalculationManagement\IOperationFactory.cs" />
+    <Compile Include="CalculationManagement\Impl\OpenForExtension\Operations\MultiplyOperation.cs" />
+    <Compile Include="CalculationManagement\Impl\OpenForExtension\OpenForExtensionCalculator.cs" />
+    <Compile Include="CalculationManagement\Impl\OpenForExtension\Operations\OperationFactory.cs" />
+    <Compile Include="CalculationManagement\Impl\OpenForExtension\Operations\SommationOperation.cs" />
     <Compile Include="DisplayManagement\IOutputBuilderResult.cs" />
     <Compile Include="DisplayManagement\Impl\ResultFactory.cs" />
     <Compile Include="Tests\CalculationManagement\GivenACalculator.cs" />
@@ -143,7 +149,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DisplayManagement\Impl\ResultDisplayer.cs" />
-    <Compile Include="CalculationManagement\Impl\SimpleCalculator.cs" />
+    <Compile Include="CalculationManagement\Impl\Simple\SimpleCalculator.cs" />
     <Compile Include="Bootstrap\Startup.cs" />
     <Compile Include="Tests\DisplayManagement\GivenAResultDisplayer.cs" />
   </ItemGroup>
