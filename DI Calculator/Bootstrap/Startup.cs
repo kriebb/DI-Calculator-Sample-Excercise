@@ -22,7 +22,7 @@ namespace DI_Calculator.Bootstrap
                 _displayer.Display(operation, result);
 
             }
-            catch (ArgumentOutOfRangeException e)
+            catch (Exception e)
             {
                 _displayer.Display(operation,$"We don't support the calculation: {x}{operation}{y}");
 

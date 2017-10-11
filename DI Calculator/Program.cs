@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Threading;
 using DI_Calculator.Bootstrap;
-using DI_Calculator.CalculationManagement;
-using DI_Calculator.DisplayManagement;
 using DI_Calculator.Framework.SettingsManagement;
 using DI_Calculator.Shared;
 using Microsoft.Practices.Unity;
+using Microsoft.Practices.Unity.InterceptionExtension;
 
 
 namespace DI_Calculator
@@ -17,12 +15,16 @@ namespace DI_Calculator
 
         static void Register(IUnityContainer container)
         {
+
+            container.AddNewExtension<Interception>();
+
             new DI_Calculator.CalculationManagement.ContainerRegistratons().Register(container);
             new DI_Calculator.DisplayManagement.ContainerRegistratons().Register(container);
             new DI_Calculator.Framework.ContainerManagement.ContainerRegistrations().Register(container);            
             
             var settings = new Settings("KRB");
             container.RegisterInstance<ISettings>(settings);
+
 
         }
 
@@ -53,10 +55,6 @@ namespace DI_Calculator
 
         static void Main(string[] args)
         {
-            //Zorg dat je de CurrentUser capteert bij de start van de applicatie en registreer de instantie.
-            //Maak dat je de usernaam kan displayen bij de displayer.
-            //Fix all the tests
-
             CalculationVersion = "V3";
 
             var operandSum = "+";
@@ -71,7 +69,7 @@ namespace DI_Calculator
             var xSubstraction = 4;
             var ySubstraction = 3;
 
-            var operandDivision = "/";
+            var operandDivision = "$";
             var xDivision = 3;
             var yDivision = 4;
 

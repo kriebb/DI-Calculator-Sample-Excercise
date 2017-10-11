@@ -17,29 +17,6 @@ namespace DI_Calculator.CalculationManagement
         {
             unityContainer.RegisterType<ICalculator, SimpleCalculator>(new ContainerControlledLifetimeManager());
         }
-
-
-
-        public void RegisterV1(IUnityContainer unityContainer)
-        {
-            unityContainer.RegisterType<IOperationFactory, OperationFactory>(new ContainerControlledLifetimeManager());
-            unityContainer.RegisterType<IOperation, MultiplyOperation>(Defines.Multiplication);
-            unityContainer.RegisterType<IOperation, SubstractionOperation>(Defines.Substraction);
-            unityContainer.RegisterType<IOperation, DivisionOperation>(Defines.Division);
-            unityContainer.RegisterType<IOperation, SommationOperation>(Defines.Sum);
-
-            unityContainer.RegisterType<ICalculator, OpenForExtensionCalculatorV1>(
-                new ContainerControlledLifetimeManager());
-        }
-        public void RegisterV2(IUnityContainer unityContainer)
-        {
-            unityContainer.RegisterType<ICalculator, OpenForExtensionCalculatorV2>(
-                new ContainerControlledLifetimeManager());
-
-            unityContainer.RegisterType<IOperation, MultiplyOperation>(Defines.Multiplication);
-            unityContainer.RegisterType<IOperation, SubstractionOperation>(Defines.Substraction);
-            unityContainer.RegisterType<IOperation, DivisionOperation>(Defines.Division);
-            unityContainer.RegisterType<IOperation, SommationOperation>(Defines.Sum);
-        }
+        
     }
 }
