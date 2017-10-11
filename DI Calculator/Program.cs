@@ -25,41 +25,63 @@ namespace DI_Calculator
         {
             unityContainer.RegisterType<IConsole, SystemConsole>(new ContainerControlledLifetimeManager(), new InjectionConstructor(new ConsoleController()));
             unityContainer.RegisterType<IDisplayer, ResultDisplayer>(new ContainerControlledLifetimeManager());
-            switch (CalculationVersion)
-            {
-                case "V0":
-                    unityContainer.RegisterType<ICalculator, SimpleCalculator>(new ContainerControlledLifetimeManager());
+            unityContainer.RegisterType<IOutputBuilderResult, ResultFactory>(new ContainerControlledLifetimeManager());
 
-                    break;
-                case "V1":
-                    unityContainer.RegisterType<ICalculator, OpenForExtensionCalculatorV1>(new ContainerControlledLifetimeManager());
+            unityContainer.RegisterType<ICalculator, SimpleCalculator>(new ContainerControlledLifetimeManager());
 
-                    break;
-                case "V2":
-                    unityContainer.RegisterType<ICalculator, OpenForExtensionCalculatorV2>(new ContainerControlledLifetimeManager());
+        }
 
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException($"{nameof(CalculationVersion)} only supports V0 or V1 or V2. It was {CalculationVersion}");
-            }
+
+        static void RegisterV1(IUnityContainer unityContainer)
+        {
             unityContainer.RegisterType<IOperationFactory, OperationFactory>(new ContainerControlledLifetimeManager());
             unityContainer.RegisterType<IOperation, MultiplyOperation>(Defines.Multiplication);
             unityContainer.RegisterType<IOperation, SubstractionOperation>(Defines.Substraction);
             unityContainer.RegisterType<IOperation, DivisionOperation>(Defines.Division);
             unityContainer.RegisterType<IOperation, SommationOperation>(Defines.Sum);
 
-            unityContainer.RegisterType<IOutputBuilderResult, ResultFactory>(new ContainerControlledLifetimeManager());
+            unityContainer.RegisterType<ICalculator, OpenForExtensionCalculatorV1>(
+                new ContainerControlledLifetimeManager());
+        }
+        static void RegisterV2(IUnityContainer unityContainer)
+        {
+            unityContainer.RegisterType<ICalculator, OpenForExtensionCalculatorV2>(
+                new ContainerControlledLifetimeManager());
+
+            unityContainer.RegisterType<IOperation, MultiplyOperation>(Defines.Multiplication);
+            unityContainer.RegisterType<IOperation, SubstractionOperation>(Defines.Substraction);
+            unityContainer.RegisterType<IOperation, DivisionOperation>(Defines.Division);
+            unityContainer.RegisterType<IOperation, SommationOperation>(Defines.Sum);
+        }
+
+        static void RegisterVersionFactory(IUnityContainer container)
+        {
+            switch (CalculationVersion)
+            {
+                case DefinesVersion.V0:
+                    break;
+
+                case DefinesVersion.V1:
+                    RegisterV1(container);
+                    break;
+
+                case DefinesVersion.V2:
+                    RegisterV2(container);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException("Please set the featureFlag to V0, V1, V2");
+
+            }
         }
 
         static void Main(string[] args)
         {
-            //Vorige oefening werkt niet. De IOperations zijn niet geregistreerd!
-            //Fix: de naam van één de operations. 
-            //Hoe konden we dit tegengaan ? => Testing
-            //Verander het gebruik van de OperationFactory, ook door de Defines te gebruiken (properdere code...))
+            //Refactor de register methode, zodanig dat die versie onafhankelijk zijn.
+            //Nadeel van deze methode is wel dat je de childcontainer moet bewerken en je niet on the fly kunt switchen van functionaliteit.
+            //Maar soms hoeft dat ook niet....
+            //Zorg ervoor dat gebruiker een bericht krijgt van geen ondersteuning.
 
-
-            CalculationVersion = "V2";
+            CalculationVersion = "V0";
 
             var operandSum = "+";
             var xSum = 4;
@@ -85,6 +107,8 @@ namespace DI_Calculator
                 //You can put this in a loop....
                 using (var childContainer = unityContainer.CreateChildContainer())
                 {
+                    RegisterVersionFactory(childContainer);
+
                     //You can also register here some stuff if you want to override
                     var appStartup = childContainer.Resolve<Startup>();
 
@@ -95,10 +119,6 @@ namespace DI_Calculator
                 }
             }
         }
-
-
-
-
 
     }
 }

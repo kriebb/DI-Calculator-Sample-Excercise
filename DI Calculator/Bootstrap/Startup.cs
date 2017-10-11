@@ -1,4 +1,5 @@
-﻿using DI_Calculator.CalculationManagement;
+﻿using System;
+using DI_Calculator.CalculationManagement;
 using DI_Calculator.DisplayManagement;
 
 namespace DI_Calculator.Bootstrap
@@ -15,9 +16,18 @@ namespace DI_Calculator.Bootstrap
         }
         public void Start(string operation, int x, int y)
         {
-            var result = _calculator.Calculate(operation, x, y);
+            try
+            {
+                var result = _calculator.Calculate(operation, x, y);
+                _displayer.Display(operation, result);
 
-            _displayer.Display(operation, result);
+            }
+            catch (ArgumentOutOfRangeException e)
+            {
+                _displayer.Display(operation,$"We don't support the calculation: {x}{operation}{y}");
+
+            }
+
         }
     }
 }

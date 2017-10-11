@@ -14,7 +14,7 @@ namespace DI_Calculator.DisplayManagement.Impl
             _console = console;
             _outputBuilderResult = outputBuilderResult;
         }
-        public void Display(string origin, int result)
+        public void Display(string origin, object result)
         {
             _console.WriteLine(_outputBuilderResult.Generate(origin,result));
             _console.ReadKey();

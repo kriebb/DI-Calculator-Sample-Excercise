@@ -1,4 +1,5 @@
 ﻿using System;
+using DI_Calculator.Shared;
 
 namespace DI_Calculator.CalculationManagement.Impl.Simple
 {
@@ -14,14 +15,14 @@ namespace DI_Calculator.CalculationManagement.Impl.Simple
             int result;
             switch (operation)
             {
-                case "*":
+                case Defines.Multiplication:
                     result = Multiply(x, y);
                     break;
-                case "+":
+                case Defines.Sum:
                     result = Add(x, y);
                     break;
                 default:
-                    throw new ArgumentException($"We ondersteunen niet de operatie: {operation} enkel maar de operatie * of +");
+                    throw new ArgumentOutOfRangeException($"We ondersteunen niet de operatie: {operation} enkel maar de operatie * of +");
             }
             return result;
         }

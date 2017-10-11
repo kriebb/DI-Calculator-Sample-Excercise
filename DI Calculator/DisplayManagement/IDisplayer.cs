@@ -2,6 +2,6 @@
 {
     public interface IDisplayer
     {
-        void Display(string origin, int result);
+        void Display(string origin, object result);
     }
 }
