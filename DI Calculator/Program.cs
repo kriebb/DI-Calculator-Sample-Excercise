@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -15,22 +16,35 @@ namespace DI_Calculator
 {
     class Program
     {
+        public static string CalculationVersion { get; set; }
 
         static void Register(IUnityContainer unityContainer)
         {
             unityContainer.RegisterType<IConsole, SystemConsole>(new ContainerControlledLifetimeManager(), new InjectionConstructor(new ConsoleController()));
             unityContainer.RegisterType<IDisplayer, ResultDisplayer>(new ContainerControlledLifetimeManager());
-            //unityContainer.RegisterType<ICalculator, SimpleCalculator>(new ContainerControlledLifetimeManager());
-            unityContainer.RegisterType<ICalculator, OpenForExtensionCalculator>(new ContainerControlledLifetimeManager());
+            switch (CalculationVersion)
+            {
+                case "V0":
+                    unityContainer.RegisterType<ICalculator, SimpleCalculator>(new ContainerControlledLifetimeManager());
+
+                    break;
+                case "V1":
+                    unityContainer.RegisterType<ICalculator, OpenForExtensionCalculator>(new ContainerControlledLifetimeManager());
+
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException($"{nameof(CalculationVersion)} only supports V0 or V1. It was {CalculationVersion}");
+            }
             unityContainer.RegisterType<IOperationFactory, OperationFactory>(new ContainerControlledLifetimeManager());
             unityContainer.RegisterType<IOutputBuilderResult, ResultFactory>(new ContainerControlledLifetimeManager());
         }
+
         static void Main(string[] args)
         {
-            //We gaan aan de advanced calculator de subtraction and the division operation toevoegen
-            //Kuis de openforextension calculator op (dead code...) van de vorige commit
-            //Voer twee extra berekeningen uit, namelijk 4-3 en 3/4
-            //We ondersteunen geen restberekeningen.
+            //We willen werken met een featureFlag. Aan de hand van een setting: 
+                //Bijv.  V0, V1 gaan we bepalen welke calculator we gaan laden.
+                //Test als je V0 gebruikt, bij het runnen van de applicatie, je een argument exception krijgt bij het gebruik van de - en de /
+            CalculationVersion = "V1";
 
 
             var operandSum = "+";
