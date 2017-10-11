@@ -16,32 +16,5 @@ namespace DI_Calculator.CalculationManagement.Impl
             var result = operation.Evaluate(x, y);
             return result;
         }
-
-        private static int OperationFactory(string operation, int x, int y)
-        {
-            int result;
-            switch (operation)
-            {
-                case "*":
-                    result = Multiply(x, y);
-                    break;
-                case "+":
-                    result = Add(x, y);
-                    break;
-                default:
-                    throw new ArgumentException($"We ondersteunen niet de operatie: {operation} enkel maar de operatie * of +");
-            }
-            return result;
-        }
-
-        private static int Multiply(int x, int y)
-        {
-            return x * y;
-        }
-
-        private static int Add(int x, int y)
-        {
-            return x + y;
-        }
     }
 }

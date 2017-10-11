@@ -27,18 +27,27 @@ namespace DI_Calculator
         }
         static void Main(string[] args)
         {
-            //We gaan de Open/Closed principe toepassen van SOLID in de OpenForExtensionCalculator
-            //De switch gaat naar een Factory (where it belongs!!)
-            //We gaan werken via een OpenForExtensionCalculator die de interface ICalculator implementeert.
-            //De oude registratie doen we eruit, en we registreren de nieuwe calculator.
+            //We gaan aan de advanced calculator de subtraction and the division operation toevoegen
+            //Kuis de openforextension calculator op (dead code...) van de vorige commit
+            //Voer twee extra berekeningen uit, namelijk 4-3 en 3/4
+            //We ondersteunen geen restberekeningen.
 
-            var operation1 = "+";
-            var x1 = 4;
-            var y1 = 3;
 
-            var operation2 = "*";
-            var x2 = 4;
-            var y2 = 3;
+            var operandSum = "+";
+            var xSum = 4;
+            var ySum = 3;
+
+            var operandMultiply = "*";
+            var xMultiply = 4;
+            var yMultiply = 3;
+
+            var operandSubstraction = "-";
+            var xSubstraction = 4;
+            var ySubstraction = 3;
+
+            var operandDivision = "/";
+            var xDivision = 3;
+            var yDivision = 4;
 
             using (var unityContainer = new UnityContainer())
             {
@@ -51,8 +60,10 @@ namespace DI_Calculator
                     //You can also register here some stuff if you want to override
                     var appStartup = childContainer.Resolve<Startup>();
 
-                    appStartup.Start(operation1, x1, y1);
-                    appStartup.Start(operation2, x2, y2);
+                    appStartup.Start(operandSum, xSum, ySum);
+                    appStartup.Start(operandMultiply, xMultiply, yMultiply);
+                    appStartup.Start(operandSubstraction, xSubstraction, ySubstraction);
+                    appStartup.Start(operandDivision, xDivision, yDivision);
                 }
             }
         }

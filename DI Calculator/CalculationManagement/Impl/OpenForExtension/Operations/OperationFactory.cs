@@ -10,9 +10,13 @@ namespace DI_Calculator.CalculationManagement.Impl
             {
                 case "*":
                     return new MultiplyOperation();
-
                 case "+":
                     return new SommationOperation();
+                case "-":
+                    return new SubstractionOperation();
+                case "/":
+                    return new DivisionOperation();
+
                 default:
                     throw new ArgumentOutOfRangeException($"{nameof(operation)} - {operation}");
 

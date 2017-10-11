@@ -134,6 +134,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalculationManagement\Impl\OpenForExtension\Operations\DivisionOperation.cs" />
+    <Compile Include="CalculationManagement\Impl\OpenForExtension\Operations\SubstractionOperation.cs" />
     <Compile Include="CalculationManagement\IOperation.cs" />
     <Compile Include="CalculationManagement\IOperationFactory.cs" />
     <Compile Include="CalculationManagement\Impl\OpenForExtension\Operations\MultiplyOperation.cs" />
