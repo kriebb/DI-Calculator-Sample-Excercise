@@ -18,6 +18,7 @@ namespace DI_Calculator
         {
             new DI_Calculator.CalculationManagement.ContainerRegistratons().Register(container);
             new DI_Calculator.DisplayManagement.ContainerRegistratons().Register(container);
+            new DI_Calculator.Framework.ContainerManagement.ContainerRegistrations().Register(container);            
         }
 
         static void RegisterVersionFactory(IUnityContainer container)
@@ -32,19 +33,20 @@ namespace DI_Calculator
                     break;
 
                 case DefinesVersion.V2:
-                    new DI_Calculator.CalculationManagement.ContainerRegistratonsV2().Register(container); break;
+                    new DI_Calculator.CalculationManagement.ContainerRegistratonsV2().Register(container); 
+                    break;
+                case DefinesVersion.V3:
+                    new DI_Calculator.CalculationManagement.ContainerRegistratonsV3().Register(container);
+                    break;
                 default:
-                    throw new ArgumentOutOfRangeException("Please set the featureFlag to V0, V1, V2");
+                    throw new ArgumentOutOfRangeException("Please set the featureFlag to V0, V1, V2,V3");
 
             }
         }
 
         static void Main(string[] args)
         {
-            //De registraties worden te groot en uitgebreid. Zorg er voor dat per management folder een registratie class is,
-            //die je kan oproepen vanaf de main.
-
-            CalculationVersion = "V2";
+            CalculationVersion = "V3";
 
             var operandSum = "+";
             var xSum = 4;

@@ -137,7 +137,9 @@
     <Compile Include="CalculationManagement\ContainerRegistratons.cs" />
     <Compile Include="CalculationManagement\ContainerRegistratonsV1.cs" />
     <Compile Include="CalculationManagement\ContainerRegistratonsV2.cs" />
+    <Compile Include="CalculationManagement\ContainerRegistratonsV3.cs" />
     <Compile Include="CalculationManagement\Impl\OpenForExtension\OpenForExtensionCalculatorV1.cs" />
+    <Compile Include="CalculationManagement\Impl\OpenForExtension\OpenForExtensionCalculatorV3.cs" />
     <Compile Include="CalculationManagement\Impl\OpenForExtension\Operations\DivisionOperation.cs" />
     <Compile Include="CalculationManagement\Impl\OpenForExtension\Operations\SubstractionOperation.cs" />
     <Compile Include="CalculationManagement\IOperation.cs" />
@@ -149,6 +151,9 @@
     <Compile Include="DisplayManagement\ContainerRegistry.cs" />
     <Compile Include="DisplayManagement\IOutputBuilderResult.cs" />
     <Compile Include="DisplayManagement\Impl\ResultFactory.cs" />
+    <Compile Include="Framework\ContainerManagement\INamedResolver.cs" />
+    <Compile Include="Framework\ContainerManagement\Impl\NamedResolver.cs" />
+    <Compile Include="Framework\ContainerManagement\UnityRegistrations.cs" />
     <Compile Include="Shared\Defines.cs" />
     <Compile Include="Tests\CalculationManagement\GivenACalculator.cs" />
     <Compile Include="Tests\Bootstrap\GivenTheStartUpClass.cs" />

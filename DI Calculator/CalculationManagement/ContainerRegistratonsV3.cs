@@ -5,11 +5,12 @@ using Microsoft.Practices.Unity;
 
 namespace DI_Calculator.CalculationManagement
 {
-    public class ContainerRegistratonsV2
+    public class ContainerRegistratonsV3
     {
+
         public void Register(IUnityContainer unityContainer)
         {
-            unityContainer.RegisterType<ICalculator, OpenForExtensionCalculatorV2>(
+            unityContainer.RegisterType<ICalculator, OpenForExtensionCalculatorV3>(
                 new ContainerControlledLifetimeManager());
 
             unityContainer.RegisterType<IOperation, MultiplyOperation>(Defines.Multiplication);
