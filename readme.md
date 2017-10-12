@@ -23,6 +23,15 @@ Ex3
 ---
 Ex4
 
+    Zorg ervoor dat je applicatie werkt met 'Add', naast ook Multiply te kennen, op basis van een parameter. Multiply = * en Add = +
+    Zorg ervoor dat je 4+3 uitkomt
+    Indien een niet gekende operatie gebruikt wordt, gaat de applicatie een exception smijten.
+
+    Commit
+
+---
+Ex5
+
     Refactor:
     Zorg dat enkel de input (values, operator) en startup in de main staan.
     - je hebt een start-method of dowork-method die de parameters bevat en die dan de applicatie uitvoert
@@ -31,14 +40,14 @@ Ex4
     Commit
 
 ---
-Ex5
+Ex6
 
     Refactor: fix - build
 
     Commit
 
 ---
-Ex6
+Ex7
 
     Refactor: next step: Weg van statics!
     Code is for production.
@@ -49,7 +58,7 @@ Ex6
     Commit
 
 ---
-Ex7
+Ex8
 
     Installeer NUnit nugetpackage met de NUnitTestadapter
     
@@ -71,7 +80,7 @@ Ex7
     Commit
 
 ---
-Ex8
+Ex9
 
     Oefening op Single Responsability gecombineerd met Manuele Injection
     Indien nog niet gedaan bij het vorige voorbeeld, zorg ervoor dat de Displayer ook getest worden wat hij zal displayen.
