@@ -4,20 +4,21 @@ Ex1
 
     Toon uitkomst van 4*3
 
-Commit
+    Commit
 
 ---
 Ex2
 
     vervang de 4 en 3 door variables
 
-Commit
+    Commit
 
 ---
 Ex3
-     Business Logic Multiply in een methode gestoken
 
-Commit
+    Business Logic Multiply in een methode gestoken
+
+    Commit
 
 ---
 Ex4
@@ -27,14 +28,14 @@ Ex4
     - je hebt een start-method of dowork-method die de parameters bevat en die dan de applicatie uitvoert
     - Zorg ervoor dat de switch gecontained is. Een Switch = Smell naar factory.
 
-Commit
+    Commit
 
 ---
 Ex5
 
     Refactor: fix - build
 
-Commit
+    Commit
 
 ---
 Ex6
@@ -45,7 +46,7 @@ Ex6
     De beide instanties moeten kunnen displayen naar de console op dezelfde manier.
     Zorg dat je weet welk resultaat komt van welke calculator
 
-Commit
+    Commit
 
 ---
 Ex7
@@ -67,7 +68,7 @@ Ex7
     
     Opkuis, verschillende bestanden maken => 't wordt te groot.
 
-Commit
+    Commit
 
 ---
 Ex8
@@ -79,7 +80,7 @@ Ex8
 
     Run tests
 
-Commit
+    Commit
 
 ---
 Ex10 - Ex11
@@ -100,7 +101,7 @@ Ex10 - Ex11
 
     Welke foutmelding krijg je?
 
-Commit
+    Commit
 
 ---
 Ex12
@@ -108,7 +109,7 @@ Ex12
     Fix zodat de applicatie runt via de registraties
     Run
 
-Commit
+    Commit
 
 ---
 Ex13
@@ -120,11 +121,12 @@ Ex13
 
     Run
 
+    Commit
+
 Ex14
 
 ---
-Commit
-
+    
     We gaan aan de advanced calculator de subtraction and the division operation toevoegen
     Kuis de openforextension calculator op (dead code...) van de vorige commit
     Voer twee extra berekeningen uit, namelijk 4-3 en 3/4
@@ -132,7 +134,7 @@ Commit
 
     Run
 
-Commit
+    Commit
 
 ---
 Ex15
@@ -145,7 +147,7 @@ Ex15
 
     Run V0, V1
 
-Commit
+    Commit
 
 ---
 Ex16
@@ -158,7 +160,7 @@ Ex16
 
     Run V2
 
-Commit
+    Commit
 
 ---
 Ex17
@@ -174,7 +176,7 @@ Ex17
 
     Run
 
-Commit
+    Commit
 
 ---
 Ex18
@@ -187,7 +189,7 @@ Ex18
 
     Run
 
-Commit
+    Commit
 
 ---
 Ex19
@@ -198,7 +200,7 @@ Ex19
 
     Run
 
-Commit
+    Commit
 
 ---
 Ex20
@@ -208,7 +210,7 @@ Ex20
 
     Run
 
-Commit
+    Commit
 
 ---
 Ex21
@@ -218,7 +220,7 @@ Ex21
 
     Run
 
-Commit
+    Commit
 
 ---
 Ex22
@@ -232,7 +234,7 @@ Ex22
 
     Run
 
-Commit
+    Commit
 
 ---
 Ex23
@@ -246,4 +248,4 @@ Ex23
 
     Verander het . bij de operand naar een $. Dat ondersteunen we niet. Wat wordt er geoutput?
 
-Commit
+    Commit
