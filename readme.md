@@ -1,16 +1,26 @@
 Begin met een console applicatie
 
-   Toon uitkomst van 4*3
+Ex1
+
+    Toon uitkomst van 4*3
 
 Commit
+
+---
+Ex2
 
     vervang de 4 en 3 door variables
 
 Commit
 
+---
+Ex3
      Business Logic Multiply in een methode gestoken
 
 Commit
+
+---
+Ex4
 
     Refactor:
     Zorg dat enkel de input (values, operator) en startup in de main staan.
@@ -19,9 +29,15 @@ Commit
 
 Commit
 
+---
+Ex5
+
     Refactor: fix - build
 
 Commit
+
+---
+Ex6
 
     Refactor: next step: Weg van statics!
     Code is for production.
@@ -30,6 +46,9 @@ Commit
     Zorg dat je weet welk resultaat komt van welke calculator
 
 Commit
+
+---
+Ex7
 
     Installeer NUnit nugetpackage met de NUnitTestadapter
     
@@ -50,6 +69,9 @@ Commit
 
 Commit
 
+---
+Ex8
+
     Oefening op Single Responsability gecombineerd met Manuele Injection
     Indien nog niet gedaan bij het vorige voorbeeld, zorg ervoor dat de Displayer ook getest worden wat hij zal displayen.
     Schrijf nu een test waarvan je het resultaat en niet of de methode gecalled wordt gaat testen.
@@ -58,6 +80,9 @@ Commit
     Run tests
 
 Commit
+
+---
+Ex10 - Ex11
 
     Verwijderen van oude referentie Unity (foutje bij setup by me).
     Toevoegen van unity op project DI Calculator
@@ -77,11 +102,16 @@ Commit
 
 Commit
 
+---
+Ex12
+
     Fix zodat de applicatie runt via de registraties
     Run
 
 Commit
 
+---
+Ex13
 
     We gaan de Open/Closed principe toepassen van SOLID in de OpenForExtensionCalculator
     De switch gaat naar een Factory (where it belongs!!)
@@ -90,6 +120,9 @@ Commit
 
     Run
 
+Ex14
+
+---
 Commit
 
     We gaan aan de advanced calculator de subtraction and the division operation toevoegen
@@ -101,6 +134,9 @@ Commit
 
 Commit
 
+---
+Ex15
+
     We willen werken met een featureFlag. Aan de hand van een setting:
     Bijv.  V0, V1 gaan we bepalen welke calculator we gaan laden.
 
@@ -111,6 +147,9 @@ Commit
 
 Commit
 
+---
+Ex16
+
     We maken een V2 van de OpenForExtensionCalculator.
     In plaats van  te werken met de OperationFactory, gaan we nu alle Operations injecteren en gaan zoeken op basis van de naam.
         Zouden we niet evengoed een OperationFactoryV2 kunnen gemaakt hebben in plaats van een nieuwe calculator?
@@ -120,6 +159,9 @@ Commit
     Run V2
 
 Commit
+
+---
+Ex17
 
     Vorige oefening werkt niet. De IOperations zijn niet geregistreerd!
         Fix: de naam van één de operations.
@@ -134,6 +176,8 @@ Commit
 
 Commit
 
+---
+Ex18
 
     Refactor de register methode, zodanig dat die versie onafhankelijk zijn.
         Nadeel van deze methode is wel dat je de childcontainer moet bewerken en je niet on the fly kunt switchen van functionaliteit.
@@ -145,6 +189,8 @@ Commit
 
 Commit
 
+---
+Ex19
 
     De registraties worden te groot en uitgebreid. Zorg er voor dat per management folder een registratie class is, 
         die je kan oproepen vanaf de main.
@@ -154,6 +200,9 @@ Commit
 
 Commit
 
+---
+Ex20
+
     Maak een V3 calculation, maar gebruik named resolving en gebruik de container daarvoor in een wrapper. Zodat je niet aan alle functionaliteit kan,
     zo wordt het ook zichtbaar dat je named resolving wilt toepassen.
 
@@ -161,12 +210,18 @@ Commit
 
 Commit
 
+---
+Ex21
+
     Maak gebruik van een KeyInputMapper, zodat je niet meer gebonden bent
         aan de * maar zodat je ook een x kan gebruiken of een . voor de multiply
 
     Run
 
 Commit
+
+---
+Ex22
 
     Zorg dat je de CurrentUser  capteert of een random naam toewijst bij de start van de applicatie en registreer de instantie.
 
@@ -178,6 +233,9 @@ Commit
     Run
 
 Commit
+
+---
+Ex23
 
     Install Nuget package Unity Interception
     Maak gebruik van de pre en post methodes, zodanig je naar de console kan wegschrijven wanneer je in een methode komt en wanneer ze klaar is.
